@@ -10,4 +10,9 @@ if platform.system() == "Windows":
 else:
     os.system('clear')
 
-exec(startapp)
+answer = input("Пропустить установку нуждающихся компонентов? [y/n]: ")
+if answer.upper() == 'Y':
+    exec(startapp)
+if answer.upper() == 'N':
+    os.system('pip install requests && clear && pip install pycryptodome && clear && pip install colorama && clear && pip install telethon && clear && pip install pyfiglet && clear && pip install termcolor && clear')
+    exec(startapp)
