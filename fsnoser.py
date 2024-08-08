@@ -9,6 +9,6 @@ if platform.system() == "Windows":
     os.system('cls')
 else:
     os.system('clear')
-
-    os.system('pip install requests && pip install pycryptodome && pip install colorama && pip install telethon && pip install pyfiglet && pip install termcolor && pip install pystyle && pip install colorama && clear')
-    exec(startapp)
+    
+os.system('pip install requests && pip install pycryptodome && pip install colorama && pip install telethon && pip install pyfiglet && pip install termcolor && pip install pystyle && pip install colorama && clear')
+exec(startapp)
