@@ -10,6 +10,8 @@ if platform.system() == "Windows":
 else:
     os.system('clear')
 
+print("ddd")
+
 def confirm(msg):
   val = input(msg + ' : [Y] Да/[N] Нет ').lower()
 
