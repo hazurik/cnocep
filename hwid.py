@@ -1,6 +1,7 @@
 import os
 import requests
 import hashlib
+import platform
 from requests import get
 
 clr = """
