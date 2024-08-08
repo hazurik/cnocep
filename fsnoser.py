@@ -24,4 +24,4 @@ def confirm(msg):
 
 print(confirm("Пропустить установку нуждающихся компонентов?"))
 
-exec(startapp)
+
