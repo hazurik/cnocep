@@ -10,4 +10,4 @@ if platform.system() == "Windows":
 else:
     os.system('clear')
 
-
+print('test')
