@@ -19,7 +19,7 @@ if platform.system() == "Windows":
 else:
     os.system('clear')
 """
-exec(clr)
+
 
 ascii_banner = pyfiglet.figlet_format(" CHOCEP", font="poison")
 colored_banner = colored(ascii_banner, color="red")
