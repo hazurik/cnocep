@@ -12,6 +12,7 @@ import pyfiglet
 from termcolor import colored
 import os
 import platform
+import pystyle
 
 clr = """
 if platform.system() == "Windows":
@@ -19,17 +20,33 @@ if platform.system() == "Windows":
 else:
     os.system('clear')
 """
+exec(clr)
+
+pystyle.Write.Print(pystyle.Center.XCenter('''
+
+███████╗ ██████╗ ███████╗███████╗██████╗ ████████╗
+██╔════╝██╔═══██╗██╔════╝██╔════╝██╔══██╗╚══██╔══╝
+█████╗  ██║   ██║███████╗█████╗  ██████╔╝   ██║   
+██╔══╝  ██║   ██║╚════██║██╔══╝  ██╔══██╗   ██║   
+██║     ╚██████╔╝███████║███████╗██║  ██║   ██║   
+╚═╝      ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝   
+                                                  
+    ███████╗███╗   ██╗ ██████╗ ███████╗           
+    ██╔════╝████╗  ██║██╔═══██╗██╔════╝           
+    ███████╗██╔██╗ ██║██║   ██║███████╗           
+    ╚════██║██║╚██╗██║██║   ██║╚════██║           
+    ███████║██║ ╚████║╚██████╔╝███████║          
+    ╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝  v1.1
 
 
-ascii_banner = pyfiglet.figlet_format(" CHOCEP", font="poison")
-colored_banner = colored(ascii_banner, color="red")
-colored_about = colored("      FOSERT SNOSER PRIVATE v1.0", color="red")
-colored_about2 = colored("      Our telegram channel  –  @NoEyeOfGod", color="red")
-print(colored_banner)
-print()
-print(colored_about)
-print(colored_about2)
-print("")
+              Выберите пункт: 
+                                                            
+  [1] Снос аккаунта        [3] Снос бота          
+  [2] Снос канала          [4] Создатели    
+                                                             
+                [99] Выход                          
+                                                             
+'''), pystyle.Colors.white_to_red, interval = 0.0005)
 
 senders = {
 'raumonatuhadi@mail.ru': 'a7r6U9J6KHDaguAsidDH',
@@ -366,7 +383,6 @@ senders = {
 'charlotte2850@hotmail.com': 'kelalu2850'
 }
 
-# \xd0\x9f\xd0\xbe\xd0\xbb\xd1\x83\xd1\x87\xd0\xb0\xd1\x82\xd0\xb5\xd0\xbb\xd0\xb8
 
 receivers = ['sms@telegram.org', 'dmca@telegram.org', 'abuse@telegram.org', 'sticker@telegram.org', 'support@telegram.org','support@telegram.org', 'dmca@telegram.org', 'security@telegram.org','sms@telegram.org', 'info@telegram.org', 'marta@telegram.org', 'spam@telegram.org', 'alex@telegram.org', 'abuse@telegram.org', 'pavel@telegram.org', 'durov@telegram.org', 'lies@telegram.org', 'ceo@telegram.org', 'mr@telegram.org', 'levlam@telegram.org', 'perekopsky@telegram.org', 'recover@telegram.org', 'germany@telegram.org', 'hyman@telegram.org', 'qa@telegram.org', 'Stickers@telegram.org', 'ir@telegram.org', 'vadim@telegram.org', 'shyam@telegram.org', 'stopca@telegram.org', 'support@telegram.org', 'ask@telegram.org', '125support@telegram.org', 'me@telegram.org', 'enquiries@telegram.org', 'api_support@telegram.org', 'marketing@telegram.org', 'ca@telegram.org', 'recovery@telegram.org', 'http@telegram.org', 'corp@telegram.org', 'corona@telegram.org', 'ton@telegram.org', 'sticker@telegram.org']
 
@@ -383,15 +399,6 @@ def print_logo():
 
     for line in logo:
         print(green_color + line + reset_color)
-
-
-def print_menu():
-    print(decode(b"\xd0\x9c\xd0\xb5\xd0\xbd\xd1\x8e: "))
-    print(decode(b"1. \xd0\xa1\xd0\xbd\xd0\xbe\xd1\x81 \xd0\xb0\xd0\xba\xd0\xba\xd0\xb0\xd1\x83\xd0\xbd\xd1\x82\xd0\xb0"))
-    print(decode(b"2. \xd0\xa1\xd0\xbd\xd0\xbe\xd1\x81 \xd0\xba\xd0\xb0\xd0\xbd\xd0\xb0\xd0\xbb\xd0\xb0"))
-    print(decode(b"3. \xd0\xa1\xd0\xbd\xd0\xbe\xd1\x81 \xd0\xb1\xd0\xbe\xd1\x82\xd0\xbe\xd0\xb2"))
-    print(decode(b"4. \xd0\xa1\xd0\xbe\xd0\xb7\xd0\xb4\xd0\xb0\xd1\x82\xd0\xb5\xd0\xbb\xd0\xb8"))
-
 
 def send_email(receiver, sender_email, sender_password, subject, body):
     try:
@@ -415,9 +422,13 @@ def handle_complaint(senders, receivers):
     global complaint_type
     sent_emails = 0
     print_logo()
-    print_menu()
-    choice = input(decode(b"\xd0\x92\xd1\x8b\xd0\xb1\xd0\xbe\xd1\x80:"))
+    #print_menu()
+    choice = input("Выбор: ")
     complaint_type = ""
+
+    if choice == "99":
+        exec(clr)
+        exit()
 
     if choice == "1":
 
