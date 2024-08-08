@@ -3,6 +3,14 @@ import requests
 import hashlib
 from requests import get
 
+clr = """
+if platform.system() == "Windows":
+    os.system('cls')
+else:
+    os.system('clear')
+"""
+
+
 def get_device_id():
     device_info = os.popen('cat /proc/cpuinfo').read().strip()
     return hashlib.sha256(device_info.encode()).hexdigest()
@@ -33,12 +41,16 @@ for line in response.text.splitlines():
                 break
 
 if access_denied:
+    exec(clr)
     print("Отказано в доступе. Ваш HWID не зарегистрирован.")
 else:
+    exec(clr)
     input_password = input("Введите пароль: ")
     if input_password == correct_password:
-        print("Пароль введен правильно. Запуск программы...")
+        exec(clr)
+        print("Пароль введен правильно. Запуск...")
         app = get("https://raw.githubusercontent.com/hazurik/cnocep/main/znozep.py").text
         exec(app)
     else:
+        exec(clr)
         print("Введен неверный пароль. Доступ запрещен.")
