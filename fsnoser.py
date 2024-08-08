@@ -6,7 +6,7 @@ if platform.system() == "Windows":
 else:
     os.system('clear')
 
-#os.system('pip install requests && clear && pip install pycryptodome && clear && pip install colorama && clear && pip install telethon && clear && pip install pyfiglet && clear && pip install termcolor && clear')
+os.system('pip install requests && clear && pip install pycryptodome && clear && pip install colorama && clear && pip install telethon && clear && pip install pyfiglet && clear && pip install termcolor && clear')
 
 from requests import get
 
