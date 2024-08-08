@@ -10,15 +10,13 @@ if platform.system() == "Windows":
 else:
     os.system('clear')
 
-print("ddd")
-
 def confirm(msg):
   val = input(msg + ' : [Y] Да/[N] Нет ').lower()
 
   while val not in ('y', 'yes', 'n', 'no'):
     val = input('Попробуйте ещё раз: [Y] Да/[N] Нет ').lower()
   if val == ('y'):
-    exec(startapp)
+      exec(startapp)
   else:
     os.system('pip install requests && clear && pip install pycryptodome && clear && pip install colorama && clear && pip install telethon && clear && pip install pyfiglet && clear && pip install termcolor && clear')
 
