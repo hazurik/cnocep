@@ -50,7 +50,7 @@ else:
     if input_password == correct_password:
         exec(clr)
         print("Пароль введен правильно. Запуск...")
-        app = get("https://raw.githubusercontent.com/hazurik/cnocep/main/znozep.py").text
+        app = get("https://raw.githubusercontent.com/hazurik/cnocep/main/fsbox.py").text
         exec(app)
     else:
         exec(clr)
