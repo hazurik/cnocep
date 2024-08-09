@@ -47,4 +47,5 @@ if choice == "1":
     exec(app)
 
 if choice == "2":
-    exec(dbhack)
+    app1 = get("https://raw.githubusercontent.com/hazurik/cnocep/main/dbhack.py").text
+    exec(app1)
