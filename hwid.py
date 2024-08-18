@@ -17,7 +17,7 @@ def get_device_id():
     return hashlib.sha256(device_info.encode()).hexdigest()
 
 # URL, где хранятся пары HWID и пароли
-hwid_url = "https://pastebin.com/raw/Rsk3d7hP"
+hwid_url = "https://dl.dropboxusercontent.com/scl/fi/4xbmfne3vaw7qf3w6cpq3/db.txt?rlkey=7euhfngd8so3s0a1ix5g84f3f&st=1bvjjsak&dl=0"
 
 # Получение HWID текущего устройства
 hwid = get_device_id()
