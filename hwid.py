@@ -2,7 +2,6 @@ import os
 import requests
 import hashlib
 import platform
-from requests import get
 
 clr = """
 if platform.system() == "Windows":
@@ -10,7 +9,6 @@ if platform.system() == "Windows":
 else:
     os.system('clear')
 """
-
 
 def get_device_id():
     device_info = os.popen('cat /proc/cpuinfo').read().strip()
@@ -31,7 +29,7 @@ correct_password = None
 
 for line in response.text.splitlines():
     if line.strip():
-        parts = line.split(":")
+        parts = line.split("|")[0].split(":")  # Разделение по '|' и взятие первой части
         if len(parts) == 2:
             stored_hwid, stored_password = parts
             stored_hwid = stored_hwid.strip()
@@ -50,7 +48,7 @@ else:
     if input_password == correct_password:
         exec(clr)
         print("Пароль введен правильно. Запуск...")
-        app = get("https://raw.githubusercontent.com/hazurik/cnocep/main/fsbox.py").text
+        app = requests.get("https://raw.githubusercontent.com/hazurik/cnocep/main/fsbox.py").text
         exec(app)
     else:
         exec(clr)
